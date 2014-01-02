@@ -1,1 +1,0 @@
-json.partial! 'idea', idea: @idea, lite: params[:lite] == "true"
