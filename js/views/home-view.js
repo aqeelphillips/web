@@ -2,6 +2,10 @@ var app = app || {};
 
 (function() {
 	app.HomeView = Backbone.View.extend({
+		events: {
+			"click div.item.spark": "showDetail"
+		}
+
 		el: '#page',
 		render: function() {
 			var jawns = new app.Jawns();
@@ -15,9 +19,15 @@ var app = app || {};
 							gutter: '.gutter-sizer',
 							itemSelector: '.item'
 						});
+						new app.SparkDataFiller(jawns);
 					}.bind(this));
 				}.bind(this)
 			});
+		},
+
+		//Spark Data should pretty much exclusively go in here:
+		showDetail: function() {
+
 		}
 	});
 })();
