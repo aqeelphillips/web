@@ -3,15 +3,16 @@
 }
 
 #page {
-	width: 80%;
+	width: 75%;
 	float: left;
+	margin-right: 2%;
 }
 
 #sidebar {
-	width: 20%
+	/* Fix positioning eventually */
+	width: 20%;
 	float: left;
-	margin: 2%;
-	padding: 2%;
+	text-align: center;
 }
 
 #jawns .item {
