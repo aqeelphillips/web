@@ -42,11 +42,33 @@
 	</div>
 </script>
 
+<script type="text/template" id="home-sidebar-template">
+	<div id="sidebar-contents">
+		<div class="sidebar-item" id="create-spark">
+			<h2>Create new Spark here</h2>
+			<button>Create!</button>
+		</div>
+		<hr/>
+		<div class="sidebar-item" id="filter-settings">
+			<h2>Filter Sparks and Ideas to the left</h2>
+			<input type="radio" name="Sparks"/><br/>
+			<input type="radio" name="Ideas"/><br/>
+			<input type="radio" name="Both" checked="true"/>
+		</div>
+		<hr/>
+		<div class="sidebar-item" id="idea-bucket">
+			<button>Ignite!</button>
+		</div>
+	</div>
+</script>
+
 <div class="container">
 	<h1>Opari</h1>
 	<hr />
-	<div id="page">
-	</div>
+	<div id="page-container">
+		<div id="page"></div>
+		<div id="sidebar"</div>
+	<div>
 </div>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
@@ -64,7 +86,6 @@
 <script src="js/router.js"></script>
 
 <!-- Tentative location because I don't know where to put these: -->
-<!-- <script src="js/spark-data.js"></script> -->
 <script src="js/idea-bucket.js"></script>
 
 <!-- Fancy Box: -->
