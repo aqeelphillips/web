@@ -21,8 +21,20 @@ var app = app || {};
 							itemSelector: '.item'
 						});
 					}.bind(this));
+
+					//Inflate Sidebar view:
+					this.sidebar = new app.HomeSideBar();
+					this.sidebar.render(function(v) {
+						$(this.el).find("#sidebar").html(v.el);
+
+						callback(this);
+					}.bind(this));
 				}.bind(this)
 			});
+		},
+
+		beforeClose: function() {
+			this.sidebar.close();
 		},
 
 		//Spark Data should pretty much exclusively go in here:

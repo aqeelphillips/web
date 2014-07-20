@@ -2,6 +2,18 @@
 	width: 2%;
 }
 
+#page {
+	width: 80%;
+	float: left;
+}
+
+#sidebar {
+	width: 20%
+	float: left;
+	margin: 2%;
+	padding: 2%;
+}
+
 #jawns .item {
 	width: 30%;
 	padding: 1%;
