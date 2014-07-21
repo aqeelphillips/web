@@ -63,6 +63,56 @@
 	</div>
 </script>
 
+<script type="text/template" id="spark-detail-template">
+	<div id="spark-detail" class="row-fluid">
+		<div class="spark-content span9">
+			
+			<div id="spark-content-header" class="row-fluid">
+				<h3 class="span4">Spark Detail - <%= spark.get('content_type') %> </h3>
+				<div class="span4"> <%= spark.get('created_at') %> </div>
+				<div class="span4"> <button id="addToIdeaBucket">Add to Idea Bucket</button> </div>
+			</div>
+			<hr/>
+			<div id="spark-content-body">
+				<% if (spark.get('content_type') == 'P') { %>
+					<img src="<%= spark.get('file') %>">
+				<% } else if (spark.get('content_type') == 'A') { %>
+					<audio controls>
+						<source src="<%= spark.get('file') %>">
+						Your browser does not support the audio tag.
+					</audio>
+				<% } else if (spark.get('content_type') == 'V') { %>
+					<iframe class="youtube-player" type="text/html" width="282" height="190" src="http://www.youtube.com/embed/<%= spark.get('content').split('http://www.youtube.com/watch?v=')[1] %>" allowfullscreen frameborder="0">
+					</iframe>
+				<% } else { %>
+					<p><%= spark.get('content') %></p>
+				<% } %>
+			</div>
+
+		</div>
+	</div>
+</script>
+
+<!-- Just a test template from the Backbone.Modal library -->
+<script type="text/template" id="modal-template">
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Backbone.Modal</h3>
+    </div>
+    <div class="bbm-modal__section">
+      <p>With Backbone.Modal you can create a modal in a few lines of code.</p>
+      <p>Some features are:</p>
+      <ul>
+        <li>Really flexible and easy to set up.</li>
+        <li>Default behaviors like ESC or clicking outside a modal.</li>
+        <li>Some awesome animations that make them feel robust.</li>
+        <li>Responsive and usable on mobile devices.</li>
+      </ul>
+    </div>
+    <div class="bbm-modal__bottombar">
+      <a href="#" class="bbm-button">Close</a>
+    </div>
+  </script>
+
 <div class="container">
 	<h1>Opari</h1>
 	<hr />

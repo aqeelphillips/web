@@ -2,11 +2,19 @@ var app = app || {};
 
 (function() {
 	app.SparkDetailView = Backbone.View.extend({
-		el: "#sparkmodal",
-		render: function(spark) {
-			console.log(spark);
+		render: function(/*spark*/) {
+			//console.log(spark);
 
-			var content = spark.get('content');
+			/*app.getTemplate("spark-detail-template", function(file) {
+				var template = _.template(file, { spark: [spark] });
+				$(this.el).html(template);
+			}).bind(this);*/
+
+			
+			//$(this.el).html(template);
+			
+
+			/*var content = spark.get('content');
 			var content_type = "Text";
 			var body = '<p>'+content+'</p>';
 			var overlay_col = 'rgba(255, 255, 255, 0.4)';
@@ -49,7 +57,8 @@ var app = app || {};
 				+body
 				+'<hr>'
 				+'<button class="quit-detail">Exit</button>';
-			this.sparkContent = '<div class="spark-detail">'+sparkContent+'</div>';
+			this.sparkContent = '<div class="spark-detail">'+sparkContent+'</div>';*/
+
 
 			return this;
 		}

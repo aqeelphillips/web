@@ -1,0 +1,35 @@
+<div id="spark-detail" class="row-fluid">
+	<% _.each(sparks, function(spark) { %>
+	<div class="spark-content span9">
+		
+		<div id="spark-content-header" class="row-fluid">
+			<h3 class="span4">Spark Detail - <%= spark.get('content_type') %> </h3>
+			<div class="span4"> <%= spark.get('created_at') %> </div>
+			<div class="span4"> <button id="addToIdeaBucket">Add to Idea Bucket</button> </div>
+		</div>
+		<hr/>
+		<div id="spark-content-body" class="span3">
+			<% if (jawn.get('content_type') == 'P') { %>
+				<img src="<%= jawn.get('file') %>">
+			<% } else if (jawn.get('content_type') == 'A') { %>
+				<audio controls>
+					<source src="<%= jawn.get('file') %>">
+					Your browser does not support the audio tag.
+				</audio>
+			<% } else if (jawn.get('content_type') == 'V') { %>
+				<iframe class="youtube-player" type="text/html" width="282" height="190" src="http://www.youtube.com/embed/<%= jawn.get('content').split('http://www.youtube.com/watch?v=')[1] %>" allowfullscreen frameborder="0">
+				</iframe>
+			<% } else { %>
+				<p><%= jawn.get('content') %></p>
+			<% } %>
+		</div>
+
+	</div>
+
+	<div class="comments span3">	
+		<% _.each(spark.get('comments'), function(comment) { %>
+			<div class="comment">Great post!</div>
+		<% }); %>
+	</div>
+	<% }); %>
+</div>

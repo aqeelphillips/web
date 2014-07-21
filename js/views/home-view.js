@@ -50,9 +50,9 @@ var app = app || {};
 			spark.fetch({
 				success: function() {
 					/*** Todo: change box/background color for different content types ***/
-					var sparkDetailView = new app.SparkDetailView();
-					var sparkDetailModal = new app.SparkDetailModal(_.template(sparkDetailView.render(spark).sparkContent));
-        			$('#modal-inflate-area').html(sparkDetailModal.render().el);
+					var sparkModal = new app.SparkDetailModal(spark);
+					console.log(sparkModal.render().el);
+        			$('#modal-inflate-area').html(sparkModal.render().el);
 
 					/*** Click listener for adding Spark to Idea Bucket: ***/
 					/*$("#addToIdeaBucket").click(function(){
