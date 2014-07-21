@@ -2,23 +2,16 @@
 	width: 2%;
 }
 
-#page {
-	width: 75%;
-	float: left;
-	margin-right: 2%;
-}
-
 #sidebar {
-	/* Fix positioning eventually */
-	width: 20%;
-	float: left;
 	text-align: center;
+	background-color: white;
 }
 
 #jawns .item {
-	width: 30%;
+	width: 22%;
 	padding: 1%;
 	margin-bottom: 2%;
+	border-radius: 6px;
 }
 
 .item audio {

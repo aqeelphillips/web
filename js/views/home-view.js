@@ -18,7 +18,8 @@ var app = app || {};
 					$(this.$el).imagesLoaded(function() {
 						$(this.$el).masonry({
 							gutter: '.gutter-sizer',
-							itemSelector: '.item'
+							itemSelector: '.item',
+							columnWidth: 230 //This is a huge hack but it appears to be working (in Chrome)
 						});
 					}.bind(this));
 
@@ -52,6 +53,7 @@ var app = app || {};
 					var sparkDetailView = new app.SparkDetailView();
 					var sparkDetailModal = new app.SparkDetailModal(_.template(sparkDetailView.render(spark).sparkContent));
         			$('.modal-inflate-area').html(sparkDetailModal.render().el);
+        			//$('.container').html(sparkDetailModal.render().el);
 
 					/*** Click listener for adding Spark to Idea Bucket: ***/
 					/*$("#addToIdeaBucket").click(function(){
